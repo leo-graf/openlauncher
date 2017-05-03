@@ -795,7 +795,12 @@ public class SmoothViewPager extends ViewGroup {
      * @param resId Resource ID of a drawable to display between pages
      */
     public void setPageMarginDrawable(@DrawableRes int resId) {
-        setPageMarginDrawable(getContext().getResources().getDrawable(resId));
+        if(Build.VERSION.SDK_INT >= 22 ){
+            setPageMarginDrawable(getContext().getResources().getDrawable(resId, null));
+        }
+        else{
+            setPageMarginDrawable(getContext().getResources().getDrawable(resId));
+        }
     }
 
     @Override

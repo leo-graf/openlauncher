@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
@@ -66,7 +67,7 @@ public class IconLabelItem extends AbstractItem<IconLabelItem, IconLabelItem.Vie
     }
 
     public IconLabelItem(Context context, int icon, int label, @Nullable View.OnClickListener listener, int iconGravity, int textColor, int gravity, int drawablePadding, Typeface typeface) {
-        this(context, context.getResources().getDrawable(icon), context.getResources().getString(label), listener, iconGravity);
+        this(context, ContextCompat.getDrawable(context, icon), context.getResources().getString(label), listener, iconGravity);
         this.textColor = textColor;
         this.gravity = gravity;
         this.drawablePadding = Tool.dp2px(drawablePadding, context);

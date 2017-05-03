@@ -11,6 +11,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.HapticFeedbackConstants;
@@ -277,7 +278,7 @@ public class AppItemView extends View implements Drawable.Callback {
                     view.getContext().getTheme().resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
 
                     view.setIconPadding(Tool.dp2px(4, view.getContext()));
-                    view.setIcon(view.getResources().getDrawable(R.drawable.ic_apps_black_24dp));
+                    view.setIcon(ContextCompat.getDrawable(view.getContext(), R.drawable.ic_apps_black_24dp));
                     view.setBgColor(Color.WHITE);
                     view.setRoundBg(true);
                     view.setIconSizeSmall(Tool.dp2px(iconSize / 2 - 8, view.getContext()));

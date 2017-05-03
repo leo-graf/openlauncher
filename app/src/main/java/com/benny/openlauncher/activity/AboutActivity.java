@@ -3,6 +3,7 @@ package com.benny.openlauncher.activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.MenuItem;
 
 import com.benny.openlauncher.R;
@@ -34,12 +35,12 @@ public class AboutActivity extends MaterialAboutActivity {
         MaterialAboutCard.Builder titleCard = new MaterialAboutCard.Builder();
         titleCard.addItem(new MaterialAboutTitleItem(R.string.app_name, R.drawable.ic_launcher));
         try {
-            titleCard.addItem(ConvenienceBuilder.createVersionActionItem(this, getResources().getDrawable(R.drawable.ic_info_outline_24dp), "Version", true));
+            titleCard.addItem(ConvenienceBuilder.createVersionActionItem(this, ResourcesCompat.getDrawable(getResources(), R.drawable.ic_info_outline_24dp, null), "Version", true));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        titleCard.addItem(ConvenienceBuilder.createWebsiteActionItem(this, getResources().getDrawable(R.drawable.ic_github), "GitHub", false, Uri.parse("https://github.com/BennyKok/OpenLauncher")));
-        titleCard.addItem(new MaterialAboutActionItem(getString(R.string.about_libs),null, getResources().getDrawable(R.drawable.ic_github), new MaterialAboutActionItem.OnClickListener() {
+        titleCard.addItem(ConvenienceBuilder.createWebsiteActionItem(this, ResourcesCompat.getDrawable(getResources(), R.drawable.ic_github, null), "GitHub", false, Uri.parse("https://github.com/BennyKok/OpenLauncher")));
+        titleCard.addItem(new MaterialAboutActionItem(getString(R.string.about_libs),null, ResourcesCompat.getDrawable(getResources(), R.drawable.ic_github, null), new MaterialAboutActionItem.OnClickListener() {
             @Override
             public void onClick() {
                 final Notices notices = new Notices();
@@ -64,7 +65,7 @@ public class AboutActivity extends MaterialAboutActivity {
                         .show();
             }
         }));
-        titleCard.addItem(ConvenienceBuilder.createRateActionItem(this, getResources().getDrawable(R.drawable.ic_thumb_up_24dp), getString(R.string.about_rate), null));
+        titleCard.addItem(ConvenienceBuilder.createRateActionItem(this, ResourcesCompat.getDrawable(getResources(), R.drawable.ic_thumb_up_24dp, null), getString(R.string.about_rate), null));
 
         MaterialAboutCard.Builder opTeamCard = new MaterialAboutCard.Builder();
         opTeamCard.title(getString(R.string.about_team));
@@ -105,7 +106,7 @@ public class AboutActivity extends MaterialAboutActivity {
                 .build());
 
 
-        //authorCard.addItem(ConvenienceBuilder.createWebsiteActionItem(this,getResources().getDrawable(),"Chris DeBrodie",false, Uri.parse("")));
+        //authorCard.addItem(ConvenienceBuilder.createWebsiteActionItem(this, ResourcesCompat.getDrawable(),"Chris DeBrodie",false, Uri.parse("")));
 
         return new MaterialAboutList.Builder()
                 .addCard(titleCard.build())

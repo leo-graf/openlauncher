@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,13 +41,13 @@ public class SettingsActivity extends BaseSettingsActivity implements MaterialPr
         //SettingsFragment settings = new SettingsFragment();
 
         MaterialPrefFragment settings = MaterialPrefFragment.newInstance(new MaterialPrefFragment.Builder(this, Color.DKGRAY, ContextCompat.getColor(this, R.color.Light_TextColor), ContextCompat.getColor(this, R.color.Light_Background), ContextCompat.getColor(this, R.color.colorAccent), false)
-                .add(new MaterialPrefFragment.ButtonPref("desktopSettings", getResources().getDrawable(R.drawable.ic_desktop_windows_black_24dp), getString(R.string.settings_group_desktop), null))
-                .add(new MaterialPrefFragment.ButtonPref("dockSettings", getResources().getDrawable(R.drawable.ic_dock_black_24dp), getString(R.string.settings_group_dock), null))
-                .add(new MaterialPrefFragment.ButtonPref("drawerSettings", getResources().getDrawable(R.drawable.ic_apps_black_24dp), getString(R.string.settings_group_drawer), null))
-                .add(new MaterialPrefFragment.ButtonPref("inputSettings", getResources().getDrawable(R.drawable.ic_gesture_black_24dp), getString(R.string.settings_group_input), null))
-                .add(new MaterialPrefFragment.ButtonPref("colorsSettings", getResources().getDrawable(R.drawable.ic_color_lens_black_24dp), getString(R.string.settings_group_color), null))
-                .add(new MaterialPrefFragment.ButtonPref("iconsSettings", getResources().getDrawable(R.drawable.ic_android_black_24dp), getString(R.string.settings_group_icons), null))
-                .add(new MaterialPrefFragment.ButtonPref("otherSettings", getResources().getDrawable(R.drawable.ic_more_horiz_black_24dp), getString(R.string.settings_group_other), null))
+                .add(new MaterialPrefFragment.ButtonPref("desktopSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_desktop_windows_black_24dp, null), getString(R.string.settings_group_desktop), null))
+                .add(new MaterialPrefFragment.ButtonPref("dockSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_dock_black_24dp, null), getString(R.string.settings_group_dock), null))
+                .add(new MaterialPrefFragment.ButtonPref("drawerSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_apps_black_24dp, null), getString(R.string.settings_group_drawer), null))
+                .add(new MaterialPrefFragment.ButtonPref("inputSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_gesture_black_24dp, null), getString(R.string.settings_group_input), null))
+                .add(new MaterialPrefFragment.ButtonPref("colorsSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_color_lens_black_24dp, null), getString(R.string.settings_group_color), null))
+                .add(new MaterialPrefFragment.ButtonPref("iconsSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_android_black_24dp, null), getString(R.string.settings_group_icons), null))
+                .add(new MaterialPrefFragment.ButtonPref("otherSettings", ResourcesCompat.getDrawable(getResources(), R.drawable.ic_more_horiz_black_24dp, null), getString(R.string.settings_group_other), null))
                 .setOnPrefClickedListener(this));
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll, settings).commit();

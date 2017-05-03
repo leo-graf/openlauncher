@@ -9,6 +9,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -120,7 +121,7 @@ public class AppManager {
                 .title((activity.getString(R.string.settings_iconPack_title)))
                 .build();
 
-        fastItemAdapter.add(new IconLabelItem(activity,activity.getResources().getDrawable(R.drawable.ic_launcher), "Default", new View.OnClickListener() {
+        fastItemAdapter.add(new IconLabelItem(activity, ContextCompat.getDrawable(activity, R.drawable.ic_launcher), "Default", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recreateAfterGettingApps = true;

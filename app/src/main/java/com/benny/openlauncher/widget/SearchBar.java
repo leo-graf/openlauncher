@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -74,7 +75,7 @@ public class SearchBar extends FrameLayout {
 
     private void init() {
         searchButton = new AppCompatImageView(getContext());
-        final CircleColorable imageDrawable = new CircleColorable(getContext(), getResources().getDrawable(R.drawable.ic_search_light_24dp), Color.BLACK);
+        final CircleColorable imageDrawable = new CircleColorable(getContext(), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_search_light_24dp, null), Color.BLACK);
         searchButton.setImageDrawable(imageDrawable);
         searchButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -85,14 +86,14 @@ public class SearchBar extends FrameLayout {
                     if (callBack != null)
                         callBack.onExpand();
 
-                    imageDrawable.setIcon(getResources().getDrawable(R.drawable.ic_clear_white_24dp));
+                    imageDrawable.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_clear_white_24dp, null));
 
                     Tool.visibleViews(ANIM_TIME, searchBox, searchItemRecycler);
                 } else {
                     if (callBack != null)
                         callBack.onCollapse();
 
-                    imageDrawable.setIcon(getResources().getDrawable(R.drawable.ic_search_light_24dp));
+                    imageDrawable.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_search_light_24dp, null));
 
                     searchBox.getText().clear();
                     Tool.invisibleViews(ANIM_TIME, searchBox, searchItemRecycler);

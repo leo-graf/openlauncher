@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -59,18 +60,18 @@ public class DesktopOptionView extends FrameLayout {
 
     public void setStarButtonColored(boolean colored) {
         if (colored) {
-            actionAdapter.getAdapterItem(0).setIcon(getContext().getResources().getDrawable(R.drawable.ic_star_black_36dp));
+            actionAdapter.getAdapterItem(0).setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_star_black_36dp, null));
         } else {
-            actionAdapter.getAdapterItem(0).setIcon(getContext().getResources().getDrawable(R.drawable.ic_star_border_black_36dp));
+            actionAdapter.getAdapterItem(0).setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_star_border_black_36dp, null));
         }
         actionAdapter.notifyAdapterItemChanged(0);
     }
 
     public void setDesktopLocked(boolean locked) {
         if (locked) {
-            actionAdapter.getAdapterItem(4).setIcon(getContext().getResources().getDrawable(R.drawable.ic_lock_white_36dp));
+            actionAdapter.getAdapterItem(4).setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_lock_white_36dp, null));
         } else {
-            actionAdapter.getAdapterItem(4).setIcon(getContext().getResources().getDrawable(R.drawable.ic_lock_open_white_36dp));
+            actionAdapter.getAdapterItem(4).setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_lock_open_white_36dp, null));
         }
         actionAdapter.notifyAdapterItemChanged(4);
     }
