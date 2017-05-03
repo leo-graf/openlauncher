@@ -104,7 +104,6 @@ public class DesktopOptionView extends FrameLayout {
         items.add(new IconLabelItem(getContext(), R.drawable.ic_dashboard_black_36dp, R.string.add_widget, null, Gravity.TOP, Color.WHITE, Gravity.CENTER, 0, typeface, false));
         items.add(new IconLabelItem(getContext(), R.drawable.ic_launch_black_36dp, R.string.action, null, Gravity.TOP, Color.WHITE, Gravity.CENTER, 0, typeface, false));
         items.add(new IconLabelItem(getContext(), R.drawable.ic_lock_open_white_36dp, R.string.lock, null, Gravity.TOP, Color.WHITE, Gravity.CENTER, 0, typeface, false));
-        items.add(new IconLabelItem(getContext(), R.drawable.ic_settings_launcher_36dp, R.string.settings, null, Gravity.TOP, Color.WHITE, Gravity.CENTER, 0, typeface, false));
         actionAdapter.set(items);
         actionAdapter.withOnClickListener(new FastAdapter.OnClickListener<IconLabelItem>() {
             @Override
